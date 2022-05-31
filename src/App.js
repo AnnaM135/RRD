@@ -1,6 +1,6 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Nav from './components/Nav';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Nav from "./components/Nav";
 import Home from "./components/Home";
 import AboutUs from "./components/AboutUs";
 import Portfolio from "./components/Portfolio";
@@ -12,13 +12,13 @@ function App() {
     <Router>
       <Nav />
       <Routes>
-        <Route path = '/' exact element = {<Home />} />
-        <Route path = '/about' element = {<AboutUs />} />
-        <Route path = '/portfolio' element = {<Portfolio />} />
-        <Route path = '/contact' element = {<Contact />} />
+        <Route path="/" exact element={<Home />} />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </Router>
-  )
+  );
 }
 
-export default App
+export default App;
