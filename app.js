@@ -7,7 +7,6 @@ const path = require("path");
 const port = 5000;
 
 if (process.env.NODE_ENV === "production") {
-  console.log("sssssssssss");
   app.use(express.static("build/"));
   app.get("*", (r, q) => {
     r.sendFile(path.resolve(__dirname, "build", "index.html"));
@@ -15,10 +14,11 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // console.log("sssssssssss");
-// app.use(express.static("build/"));
-// app.get("*", (req, res) => {
-//   res.sendFile(path.resolve(__dirname, "build", "index.html"));
-// });
+app.use(express.static("build/"));
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "build", "index.html"));
+});
+
 app.listen(port, (err) => {
   if (err) return console.log(err);
   console.log("server is run");
